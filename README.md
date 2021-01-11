@@ -75,35 +75,34 @@
    #  2. Choosing person(remove the other 2d points for each frame)
    ```
 ## Google Colab Usage 
+
+0. Open the .ipynb file in the repo with colab.
+
+1. place your video into `./outputs` folder.
+
+##### Single person video
+
+2. change the `video_path` in the `./videopose.py`
+3. Run it! You will find the rendered output video in the `./outputs` folder.
+
+##### Multiple person video 
+
+1. For developing, check `./videopose_multi_person`
+
+   ```python
+   video = 'kobe.mp4'
    
-
-
-##### Tips
-0. The [PyCharm](https://www.jetbrains.com/pycharm/) is recommended since it is the IDE I'm using during development.
-1. If you're using PyCharm, mark `./joints_detectors/Alphapose`, `./joints_detectors/hrnet` and `./pose_trackers` as source root.
-2. If your're trying to run in command line, add these paths mentioned above to the sys.path at the head of `./videopose.py`
-
-## Advanced
-
-As this script is based on the [VedioPose3D](https://github.com/facebookresearch/VideoPose3D) provided by Facebook, and automated in the following way:
-
-```python
-args = parse_args()
-
-args.detector_2d = 'alpha_pose'
-dir_name = os.path.dirname(video_path)
-basename = os.path.basename(video_path)
-video_name = basename[:basename.rfind('.')]
-args.viz_video = video_path
-args.viz_output = f'{dir_name}/{args.detector_2d}_{video_name}.gif'
-
-args.evaluate = 'pretrained_h36m_detectron_coco.bin'
-
-with Timer(video_path):
-    main(args)
-```
-
-The meaning of arguments can be found [here](https://github.com/facebookresearch/VideoPose3D/blob/master/DOCUMENTATION.md), you can customize it conveniently by changing the `args` in `./videopose.py`.
+   handle_video(f'outputs/{video}') 
+   # Run AlphaPose, save the result into ./outputs/alpha_pose_kobe
+   
+   track(video)					 
+   # Taking the result from above as the input of PoseTrack, output poseflow-results.json # into the same directory of above. 
+   # The visualization result is save in ./outputs/alpha_pose_kobe/poseflow-vis
+   
+   # TODO: Need more action:
+   #  1. "Improve the accuracy of tracking algorithm" or "Doing specific post processing 
+   #     after getting the track result".
+   #  2. Choosing person(remove the other 2d points for each frame)
 
 
 ## Acknowledgement
