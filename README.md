@@ -2,7 +2,7 @@
 
 > Predict 3d human pose from video
 
-<p align="center"><img src="asset/kunkun_alphapose.gif" width="100%" alt="" /></p>
+<p align="center"><img src="test.gif" width="100%" alt="" /></p>
 
 ## Prerequisite
 
