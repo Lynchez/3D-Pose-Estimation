@@ -74,8 +74,8 @@
    #     after getting the track result".
    #  2. Choosing person(remove the other 2d points for each frame)
    ```
-
-
+## Google Colab Usage 
+   
 
 
 ##### Tips
