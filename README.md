@@ -106,26 +106,15 @@ with Timer(video_path):
 The meaning of arguments can be found [here](https://github.com/facebookresearch/VideoPose3D/blob/master/DOCUMENTATION.md), you can customize it conveniently by changing the `args` in `./videopose.py`.
 
 
-
 ## Acknowledgement
 
 The 2D pose to 3D pose and visualization part is from [VideoPose3D](https://github.com/facebookresearch/VideoPose3D).
 
 Some of the "In the wild" script is adapted from the other [fork](https://github.com/tobiascz/VideoPose3D).
 
-The project structure and `./videopose.py` running script is adapted from [this repo](https://github.com/lxy5513/videopose)
+The project structure and `./videopose.py` running script is adapted from [this repo](https://github.com/lxy5513/videopose).
+
+I got from its great integration and expression [this repo](https://github.com/zh-plus/video-to-pose3D).
 
 
-
-## Coming soon
-
-The other feature will be added to improve accuracy in the future:
-
-- [x] Human completeness check.
-- [x] Object Tracking to the first complete human covering largest area.
-- [x] Change 2D pose estimation method such as [AlphaPose](https://github.com/MVIG-SJTU/AlphaPose).
-- [x] Test HR-Net as 2d joints detector.
-- [x] Test LightTrack as pose tracker.
-- [ ] Multi-person video(complex) support.
-- [ ] Data augmentation to solve "high-speed with low-rate" problem: [SLOW-MO](https://github.com/avinashpaliwal/Super-SloMo).
 
